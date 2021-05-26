@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">VCommunity</string>
+    <string name="title_main">Main</string>
+    <string name="title_messages">Messages</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_stats">Stats</string>
+    <string name="title_settings">Settings</string>
+    <string name="auth_confirmation_text1">You are about to authorize via VK app, if it is installed or via OAuth otherwise.</string>
+    <string name="auth_confirmation_text2">Click the button below to proceed.</string>
+    <string name="auth_button_text">Authorize</string>
+    <string name="auth_fail_text">Authorization failed.</string>
+    <integer name="com_vk_sdk_AppId">7858636</integer>
+</resources>

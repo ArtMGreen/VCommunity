@@ -7,21 +7,6 @@
         android:title="@string/title_main" />
 
     <item
-        android:id="@+id/navigation_messages"
-        android:icon="@drawable/message_outline_112"
-        android:title="@string/title_messages" />
-
-    <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/notification_outline_112"
-        android:title="@string/title_notifications" />
-
-    <item
-        android:id="@+id/navigation_stats"
-        android:icon="@drawable/statistics_outline_112"
-        android:title="@string/title_stats" />
-
-    <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings_outline_112"
         android:title="@string/title_settings" />

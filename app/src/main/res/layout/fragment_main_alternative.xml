@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment">
+
+    <EditText
+        android:id="@+id/titleEdit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/title_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/descEdit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/desc_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleEdit" />
+
+    <EditText
+        android:id="@+id/screenNameEdit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/screen_name_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descEdit" />
+
+    <EditText
+        android:id="@+id/websiteEdit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="textNoSuggestions"
+        android:hint="@string/website_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenNameEdit" />
+
+    <CheckBox
+        android:id="@+id/wallCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/wall_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/websiteEdit" />
+
+    <CheckBox
+        android:id="@+id/topicsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/topics_switch"
+        app:layout_constraintStart_toEndOf="@+id/wallCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/websiteEdit" />
+
+    <CheckBox
+        android:id="@+id/photosCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/photos_switch"
+        app:layout_constraintStart_toEndOf="@+id/topicsCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/websiteEdit" />
+
+    <CheckBox
+        android:id="@+id/videoCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/video_switch"
+        app:layout_constraintStart_toEndOf="@+id/photosCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/websiteEdit" />
+
+    <CheckBox
+        android:id="@+id/audioCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/audio_switch"
+        app:layout_constraintStart_toEndOf="@+id/videoCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/websiteEdit" />
+
+    <CheckBox
+        android:id="@+id/docsCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/docs_switch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wallCheckBox" />
+
+    <CheckBox
+        android:id="@+id/wikiCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/wiki_switch"
+        app:layout_constraintStart_toEndOf="@+id/docsCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/topicsCheckBox" />
+
+    <CheckBox
+        android:id="@+id/obsFCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/obscene_filter_switch"
+        app:layout_constraintStart_toEndOf="@+id/wikiCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/videoCheckBox" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/save_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/obsFCheckBox" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

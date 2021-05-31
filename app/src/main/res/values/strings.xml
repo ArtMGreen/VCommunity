@@ -9,5 +9,26 @@
     <string name="auth_confirmation_text2">Click the button below to proceed.</string>
     <string name="auth_button_text">Authorize</string>
     <string name="auth_fail_text">Authorization failed.</string>
+    <string name="group_choice_text">Choose the group you want to manage.</string>
+    <string name="tabs_text">You can switch between the tabs below. Try it!</string>
+    <string name="title_edit_text">Community title</string>
+    <string name="desc_edit_text">Community description</string>
+    <string name="screen_name_text">vk.com/[this]</string>
+    <string name="website_edit_text">Community website</string>
+    <string name="wall_switch">Wall</string>
+    <string name="topics_switch">Topics</string>
+    <string name="photos_switch">Photos</string>
+    <string name="video_switch">Videos</string>
+    <string name="audio_switch">Audios</string>
+    <string name="docs_switch">Docs</string>
+    <string name="wiki_switch">Wiki</string>
+    <string name="messages_switch">Messages</string>
+    <string name="obscene_filter_switch">Obscene Filter</string>
+    <string name="no_al_text">No age limit</string>
+    <string name="sixteen_al_text">16+ only</string>
+    <string name="eighteen_al_text">18+ only</string>
+    <string name="save_button_text">Save</string>
+    <string name="success">Success!</string>
+    <string name="fail">Something has went wrong.</string>
     <integer name="com_vk_sdk_AppId">7858636</integer>
 </resources>

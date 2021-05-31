@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity {
         if (!VK.isLoggedIn()) {
             Intent intent = new Intent(MainActivity.this, AuthActivity.class);
             startActivityForResult(intent, AUTH_REQ_CODE);
+        } else {
+            Intent intent = new Intent(MainActivity.this, GroupChoiceActivity.class);
+            startActivityForResult(intent, GROUP_CHOICE_CODE);
         }
-        Intent intent = new Intent(MainActivity.this, GroupChoiceActivity.class);
-        startActivityForResult(intent, GROUP_CHOICE_CODE);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
@@ -65,7 +66,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == AUTH_REQ_CODE) {
-            if (resultCode == RESULT_OK) {}
+            if (resultCode == RESULT_OK) {
+                Intent intent = new Intent(MainActivity.this, GroupChoiceActivity.class);
+                startActivityForResult(intent, GROUP_CHOICE_CODE);
+            }
             else {
                 Toast.makeText(this, R.string.auth_fail_text, Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(MainActivity.this, AuthActivity.class);
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 group_id = Integer.parseInt(data.getStringExtra("group_id"));
             }
             else {
-                Toast.makeText(this, R.string.auth_fail_text, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, R.string.gc_failed, Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(MainActivity.this, GroupChoiceActivity.class);
                 startActivityForResult(intent, GROUP_CHOICE_CODE);
             }

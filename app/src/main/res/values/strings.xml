@@ -24,11 +24,11 @@
     <string name="wiki_switch">Wiki</string>
     <string name="messages_switch">Messages</string>
     <string name="obscene_filter_switch">Obscene Filter</string>
-    <string name="no_al_text">No age limit</string>
-    <string name="sixteen_al_text">16+ only</string>
-    <string name="eighteen_al_text">18+ only</string>
     <string name="save_button_text">Save</string>
     <string name="success">Success!</string>
     <string name="fail">Something has went wrong.</string>
+    <string name="logout">Logout</string>
+    <string name="no_vk_team_warning">This app has nothing to deal with VK Team.</string>
+    <string name="gc_failed">You have not chosen the group you want to manage yet.</string>
     <integer name="com_vk_sdk_AppId">7858636</integer>
 </resources>

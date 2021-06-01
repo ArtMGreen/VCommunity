@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class MainFragment extends Fragment {
-
+    // со всех этих элементов впоследствии "пылесосится" пользовательский ввод
     TextView titleEdit;
     TextView screenNameEdit;
     TextView descEdit;
@@ -55,6 +55,7 @@ public class MainFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         MainActivity main_act = (MainActivity)getActivity();
         group_id = main_act.getGroupId();
+        // Баг, который стал фичей! Предлагаем пользователю попробовать переключение между вкладками
         if (group_id == 0) {
             View root;
             root = inflater.inflate(R.layout.fragment_main, container, false);
@@ -119,7 +120,11 @@ public class MainFragment extends Fragment {
             }
 
             @Override
-            public void fail(@NotNull Exception e) {}
+            public void fail(@NotNull Exception e) {
+                // Странно, попытка автозаполнения полей ВСЕГДА приводит меня сюда!
+                // Обратился в Поддержку ВКонтакте по поводу этого метода API
+                Toast.makeText(getActivity(), R.string.fail, Toast.LENGTH_LONG).show();
+            }
         });
     }
 
@@ -189,7 +194,8 @@ public class MainFragment extends Fragment {
         }
 
         obsf = obsFCheckBox.isChecked();
-
+        // кошмар программиста: нет аргументов по умолчанию,
+        // 10 тысяч null в аргументах уже здесь и ещё несколько на подходе
         VK.execute(new GroupsService().groupsEdit(group_id, title, desc, screen_name, null,
                 website, null, null, null, null, null, null,
                 null, null, null, null, wall, topics,

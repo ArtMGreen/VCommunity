@@ -26,6 +26,9 @@ public class AuthActivity extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
         setContentView(R.layout.activity_auth);
         auth_button = findViewById(R.id.auth_button);
+        // права доступа (scopes):
+        // offline (токен не обнуляется через несколько часов)
+        // groups (доступ к управлению группами пользователя)
         scopes = new ArrayList<>();
         scopes.add(VKScope.GROUPS);
         scopes.add(VKScope.OFFLINE);
@@ -36,11 +39,12 @@ public class AuthActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         VKAuthCallback callback = new VKAuthCallback() {
             @Override
+            // если успешно
             public void onLogin(VKAccessToken token) {
                 setResult(RESULT_OK);
                 finish();
             }
-
+            // если не очень успешно
             public void onLoginFailed(int errorCode) {
                 setResult(RESULT_CANCELED);
                 finish();

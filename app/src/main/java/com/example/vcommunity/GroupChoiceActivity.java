@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.vk.api.sdk.VK;
 import com.vk.api.sdk.VKApiCallback;
@@ -34,12 +33,14 @@ public class GroupChoiceActivity extends AppCompatActivity {
 
         final int[] userIdarr = new int[1];
         ArrayList<GroupsFilter> filter = new ArrayList<>();
+        // получаем только группы, где у пользователя права администратора/создателя
         filter.add(GroupsFilter.ADMIN);
         ArrayList<GroupsFields> fields = new ArrayList<>();
         fields.add(GroupsFields.MEMBERS_COUNT);
         VK.execute(new AccountService().accountGetProfileInfo(), new VKApiCallback<AccountUserSettings>() {
             @Override
             public void success(AccountUserSettings result) {
+                // обход с финализированным массивом вместо переменной мне предложила IDE.
                 userIdarr[0] = result.getId();
             }
 
@@ -60,10 +61,10 @@ public class GroupChoiceActivity extends AppCompatActivity {
                 for (GroupsGroupFull group: groups) {
                     ArrayList<String> entry = new ArrayList<>();
                     entry.add(group.getName());
-                    entry.add("Members:" + group.getMembersCount().toString());
+                    entry.add("Members: " + group.getMembersCount().toString());
                     entry.add(group.getId().toString());
                     groupsParameters.add(entry);
-                    // я/мы ждём АПИ ответа как соловей лета
+                    // код ждёт АПИ ответа как соловей лета и настраивает интерфейс дальше
                     Activity act = GroupChoiceActivity.this;
                     groups_list_view = findViewById(R.id.groups_list_view);
                     groups_list_view.setLayoutManager(new LinearLayoutManager(act));
@@ -78,6 +79,7 @@ public class GroupChoiceActivity extends AppCompatActivity {
                 finish();
             }
         });
-        // раньше код, ждавший как соловей лета, был тут. Умора, список групп показывался пустым, ха-ха!
+        // раньше код, ждавший как соловей лета, был тут.
+        // Список групп показывался пустым, API не успевало возвращать ответы :(
     }
 }

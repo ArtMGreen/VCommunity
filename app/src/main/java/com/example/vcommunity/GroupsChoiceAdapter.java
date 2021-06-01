@@ -22,11 +22,13 @@ public class GroupsChoiceAdapter extends RecyclerView.Adapter<GroupsChoiceAdapte
         private final TextView GroupTitleView;
         private final TextView GroupMembersView;
         private String group_id;
+        // активность выбора группы здесь везде передаётся аргументами, чтобы каждый элемент
+        // списка по нажатии мог завершать активность с результатом
         private Activity gcActy;
 
         public ViewHolder(View v, Activity acty) {
             super(v);
-            // Define click listener for the ViewHolder's View.
+            // Вот что будет при нажатии на элемент списка:
             v.setOnClickListener(v1 -> {
                 Intent i = new Intent();
                 i.putExtra("group_id", group_id);
@@ -55,7 +57,8 @@ public class GroupsChoiceAdapter extends RecyclerView.Adapter<GroupsChoiceAdapte
         groupsParameters = dataSet;
         gcaActy = acty;
     }
-
+    // элементы списка создаются всего несколько раз, а потом используются снова и снова,
+    // так как информация на них буквально перезаписывается в onBindViewHolder()
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
         View v = LayoutInflater.from(viewGroup.getContext())

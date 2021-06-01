@@ -123,7 +123,7 @@ public class MainFragment extends Fragment {
             public void fail(@NotNull Exception e) {
                 // Странно, попытка автозаполнения полей ВСЕГДА приводит меня сюда!
                 // Обратился в Поддержку ВКонтакте по поводу этого метода API
-                Toast.makeText(getActivity(), R.string.fail, Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), R.string.autofill_failed, Toast.LENGTH_LONG).show();
             }
         });
     }
